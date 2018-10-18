@@ -20,10 +20,10 @@ def nms(boxes, overlap_threshold=0.5, mode='union'):
     picked_list = []
     x1, y1, x2, y2, score = [boxes[:, i] for i in range(5)]
     # grab the coordinates of the bounding boxes
-    area = (x2 - x1 +1.0)*(y2 - y1 +1.0)
+    area = (x2 - x1 + 1.0) * (y2 - y1 + 1.0)
     ids = np.argsort(score)    # argsort 变换为递增顺序
 
-    while len(ids)>0:
+    while len(ids) > 0:
         # grab the max one
         last = len(ids) - 1
         largest = ids[last]

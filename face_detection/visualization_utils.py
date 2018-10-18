@@ -18,12 +18,12 @@ def show_boxes(img, bounding_boxes, facial_landmark=[]):
         draw.rectangle([
             (b[0], b[1]),
             (b[2], b[3])
-        ], outline='white')
+        ], outline='red')
 
     for p in facial_landmark:
         for i in range(5):
             draw.ellipse([
                 (p[i] - 1.0, p[i+5] - 1.0),
                 (p[i] + 1.0, p[i+5] + 1.0)
-            ], outline='blue')
+            ], outline='white')
     return img_copy
